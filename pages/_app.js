@@ -1,7 +1,9 @@
 import '../styles/globals.css'
+import ParticlesStuff from '../components/ui/Particles'
 
 import Layout from '../components/layout/Layout'
-import { createTheme, ThemeProvider } from '@mui/material'
+import { Box, createTheme, ThemeProvider } from '@mui/material'
+import { withPasswordProtect } from 'next-password-protect'
 
 const THEME = createTheme({
   typography: {
@@ -28,14 +30,13 @@ const THEME = createTheme({
   },
 })
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={THEME}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <ParticlesStuff />
     </ThemeProvider>
   )
 }
-
-export default MyApp

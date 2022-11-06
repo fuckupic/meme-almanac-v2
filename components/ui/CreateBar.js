@@ -84,16 +84,16 @@ const CreateBar = ({ date, names, filterMemes }) => {
           >
             Filtrovat
           </Button>
-          <a onClick={handleClick}>
-            <Button
-              variant="contained"
-              color="secondary"
-              startIcon={<AddCircleOutlineRoundedIcon />}
-              onclick={handleClick}
-            >
-              Přidat Memák
-            </Button>
-          </a>
+          {/* <a onClick={handleClick}> */}
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<AddCircleOutlineRoundedIcon />}
+            onClick={handleClick}
+          >
+            Přidat Memák
+          </Button>
+          {/* </a> */}
         </Stack>
       </form>
     </div>

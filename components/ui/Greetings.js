@@ -14,17 +14,12 @@ const Greetings = () => {
           sx={{
             px: 2,
             py: 4,
-            bgColor: 'rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(10px)',
+            bgColor: 'rgba(255, 255, 255, 0.01)',
+            backdropFilter: 'blur(5px)',
             boxShadow: 3,
           }}
         >
-          <Typography
-            variant="h1"
-            variantMapping="h2"
-            color="initial"
-            fontFamily={'Righteous'}
-          >
+          <Typography variant="h1" color="initial" fontFamily={'Righteous'}>
             Vítej v knize memásků
           </Typography>
           <Typography variant="body1" color="initial">

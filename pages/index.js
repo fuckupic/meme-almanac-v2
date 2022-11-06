@@ -1,6 +1,7 @@
 // our - domain.com
 import { useRef, useState, useEffect } from 'react'
 import useSwr from 'swr'
+import ParticlesStuff from '../components/ui/Particles'
 
 import CreateBar from '../components/ui/CreateBar'
 import Greetings from '../components/ui/Greetings'
@@ -20,7 +21,12 @@ function HomePage() {
 
   return (
     <div>
-      <Box fontFamily={'Dosis'}>
+      <Box
+        className="mainContent"
+        fontFamily={'Dosis'}
+        position={'relative'}
+        sx={{ zIndex: 100 }}
+      >
         <Stack alignItems={'center'}>
           <Greetings memes={data}></Greetings>
           <CreateBar date={years} names={names}></CreateBar>

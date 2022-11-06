@@ -6,20 +6,16 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   if (req.method === 'POST') {
-    const { enteredName, enteredDescription, enteredDate } = req.body
-
-    const str = enteredDate
-
-    const [year, month, day] = str.split('-')
-
-    const date = new Date(+year, +month - 1, +day)
+    const { enteredName, enteredDescription, enteredDate, enteredImage } =
+      req.body
 
     try {
       const newMeme = await prisma.memes.create({
         data: {
           name: enteredName,
           description: enteredDescription,
-          date: date,
+          date: enteredDate,
+          image: enteredImage,
         },
       })
       console.log('Added category data')

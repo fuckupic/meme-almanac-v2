@@ -13,5 +13,6 @@ model Memes {
     dateAdded   DateTime  @default(now())
     name        String
     description String
-    date        DateTime
+    image       String
+    date        String
 }

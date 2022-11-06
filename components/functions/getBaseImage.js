@@ -1,12 +1,33 @@
-export default function getBase64Image(img) {
-  var canvas = document.createElement('canvas')
-  canvas.width = img.width
-  canvas.height = img.height
+import React from 'react'
+import { useState } from 'react'
 
-  var ctx = canvas.getContext('2d')
-  ctx.drawImage(img, 0, 0)
+const deepai = require('deepai')
 
-  var dataURL = canvas.toDataURL('image/png')
+const handleImageGeneration = (param) => {
+  const [response, setResponse] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, '')
+  deepai.setApiKey('ac5e71f6-5e75-44e7-b465-5b622aa5ea89')
+
+  const fetchImage = async (image) => {
+    try {
+      setIsLoading(true)
+      const res = await deepai.callStandardApi('stable-diffusion', {
+        text: image,
+        grid_size: '1',
+      })
+    } catch (error) {
+      setError(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchImage(param)
+  }, [param])
+
+  return response, loading, error,
+  fetchImage: image => fetchImage(image)
 }

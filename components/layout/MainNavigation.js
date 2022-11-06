@@ -52,7 +52,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const NavBar = () => {
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: 'red' }}>
+    <Box
+      sx={{ flexGrow: 1, backgroundColor: 'red', zIndex: 100 }}
+      position={'relative'}
+    >
       <AppBar position="static">
         <Toolbar sx={{ flexGrow: 1, backgroundColor: 'black' }}>
           <Typography
