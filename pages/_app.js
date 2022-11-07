@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout'
 import { Box, createTheme, ThemeProvider } from '@mui/material'
 import { withPasswordProtect } from 'next-password-protect'
 import { UserProvider } from '@auth0/nextjs-auth0'
-// import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const THEME = createTheme({
   typography: {
@@ -45,4 +45,4 @@ export default function MyApp({ Component, pageProps }) {
   )
 }
 
-// export const getServerSideProps = withPageAuthRequired()
+export const getServerSideProps = withPageAuthRequired()
