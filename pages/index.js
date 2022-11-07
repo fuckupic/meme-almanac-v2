@@ -21,6 +21,9 @@ function HomePage() {
   years = [...new Set(years)]
   var names = data?.map((d) => d.name)
 
+  const [newMemes, setNewMemes] = useState()
+  const memeRef = useRef()
+
   return (
     <div>
       <Box

@@ -41,8 +41,8 @@ const CreateBar = ({ date, names, filterMemes }) => {
       <form onSubmit={filterMemes}>
         <Grid
           container
-          rowSpacing={{ xs: 1, sm: 2, md: 2 }}
-          columnSpacing={{ xs: 1, sm: 2, md: 2 }}
+          rowSpacing={{ xs: 4, sm: 4, md: 2 }}
+          columnSpacing={{ xs: 2, sm: 2, md: 2 }}
           textAlign={'center'}
           justifyContent={'center'}
           alignItems={'center'}
@@ -51,55 +51,53 @@ const CreateBar = ({ date, names, filterMemes }) => {
             py: 4,
           }}
         >
-          <Grid item xs={10} sm={5} md={4}>
-            <Autocomplete
-              freeSolo
-              id="free-solo-2-demo"
-              disableClearable
-              options={names}
-              sx={{
-                // width: 300,
-                backdropFilter: 'blur(12px)',
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  value={nameRef}
-                  label="Název"
-                  InputProps={{
-                    ...params.InputProps,
-                    type: 'search',
-                  }}
-                />
-              )}
-            />
-          </Grid>
-          <Grid item xs={10} sm={5} md={4}>
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={date}
-              sx={{
-                backdropFilter: 'blur(12px)',
-              }}
-              renderInput={(params) => (
-                <TextField {...params} value={yearRef} label="Rok" />
-              )}
-            />
-          </Grid>
-          <Grid item xs={10} sm={5} md={4}>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              onClick={handleFilter}
-              startIcon={<FilterAltIcon />}
-              sx={{
-                border: '2px solid #000',
-              }}
-            >
-              Filtrovat
-            </Button>
+          <Grid item xs={10} sm={8} md={8}>
+            <Stack direction={'row'} spacing={2}>
+              <Autocomplete
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={names}
+                sx={{
+                  width: 200,
+                  backdropFilter: 'blur(12px)',
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    value={nameRef}
+                    label="Název"
+                    InputProps={{
+                      ...params.InputProps,
+                      type: 'search',
+                    }}
+                  />
+                )}
+              />
+              <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={date}
+                sx={{
+                  backdropFilter: 'blur(12px)',
+                }}
+                renderInput={(params) => (
+                  <TextField {...params} value={yearRef} label="Rok" />
+                )}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                onClick={handleFilter}
+                startIcon={<FilterAltIcon />}
+                sx={{
+                  border: '2px solid #000',
+                }}
+              >
+                Filtrovat
+              </Button>
+            </Stack>
           </Grid>
           <Grid item xs={10} sm={5} md={4}>
             {/* <a onClick={handleClick}> */}

@@ -70,7 +70,6 @@ export default function Meme({
       method: 'DELETE',
     })
     router.reload(window.location.pathname)
-    toast.success('Deleted')
   }
 
   return (

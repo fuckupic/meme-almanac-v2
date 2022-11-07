@@ -60,6 +60,8 @@ const NewMeme = () => {
         }
       ).then((r) => r.json())
 
+      console.log(imagedata)
+      console.log(imagedata.secure_url)
       setImageSrc(imagedata.secure_url)
       setUploadData(imagedata)
 
@@ -159,11 +161,6 @@ const NewMeme = () => {
                 inputRef={descriptionInputRef}
               />
 
-              {/* {uploadData && (
-            <code>
-              <pre>{JSON.stringify(uploadData, null, 2)}</pre>
-            </code>
-          )} */}
               <Autocomplete
                 disablePortal
                 id="combo-box-demo"
@@ -185,8 +182,7 @@ const NewMeme = () => {
                 Vobrázek
               </Typography>
               <input type="file" name="file" onChange={handleOnChange} />
-
-              <Image src={imageSrc} alt="uploaded Image" />
+              <img src={imageSrc} width={'200'} />
               <Button variant="contained" color="primary" type="submit">
                 Přidat memzáka
               </Button>

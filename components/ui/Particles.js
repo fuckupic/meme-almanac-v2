@@ -107,9 +107,9 @@ const ParticlesStuff = () => {
             direction: 'none',
             enable: true,
             outMode: 'out',
-            random: true,
+            random: false,
             speed: 2,
-            straight: true,
+            straight: false,
           },
           number: {
             density: {
@@ -117,7 +117,7 @@ const ParticlesStuff = () => {
               area: 800,
             },
             limit: 0,
-            value: 100,
+            value: 20,
           },
           opacity: {
             animation: {

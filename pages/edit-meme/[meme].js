@@ -182,7 +182,7 @@ const EditMeme = () => {
           boxShadow: 3,
           padding: 2,
           margin: 'auto',
-          maxWidth: '50%',
+          maxWidth: '300px',
         }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -248,7 +248,7 @@ const EditMeme = () => {
             {!imageSrc && (
               <Image
                 src={image}
-                fit="contain"
+                fit="fit"
                 alt=""
                 showLoading={true}
                 sx={{
@@ -260,7 +260,7 @@ const EditMeme = () => {
             {imageSrc && (
               <Image
                 src={imageSrc}
-                fit="contain"
+                fit="fit"
                 alt=""
                 showLoading={true}
                 sx={{
@@ -323,13 +323,14 @@ const EditMeme = () => {
               Vobrázek
             </Typography>
             <input type="file" name="file" onChange={handleOnChange} />
-            <ToastContainer />
+
             <Button variant="contained" color="primary" type="submit">
               Upravit memzáka
             </Button>
           </Stack>
         </form>
       </Box>
+      <ToastContainer />
     </Box>
   )
 }
