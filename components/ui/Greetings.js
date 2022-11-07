@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack'
 const Greetings = () => {
   return (
     <div>
-      <Box spacing={2} maxWidth={'40rem'}>
+      <Box spacing={2} maxWidth={'40em'} m={'auto'}>
         <Stack
           spacing={2}
           borderRadius={'20px'}
@@ -18,9 +18,17 @@ const Greetings = () => {
             borderRadius: '20px',
             border: '2px solid rgba(0, 0, 0, 1)',
             boxShadow: 3,
+            maxWidth: '80%',
+            margin: 'auto',
+            mb: 5,
           }}
         >
-          <Typography variant="h1" color="initial" fontFamily={'Righteous'}>
+          <Typography
+            variant="h1"
+            color="initial"
+            fontSize={52}
+            fontFamily={'Righteous'}
+          >
             Vítej v knize memásků
           </Typography>
           <Typography variant="body1" color="initial">
