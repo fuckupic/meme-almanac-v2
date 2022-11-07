@@ -133,7 +133,8 @@ const NewMeme = () => {
             <Typography
               variant="h1"
               color="initial"
-              fontFamily={'Righteous'}
+              fontFamily={'Roboto'}
+              fontWeight={'bold'}
               textAlign="center"
             >
               Přidat Memzu

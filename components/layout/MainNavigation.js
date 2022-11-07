@@ -75,7 +75,8 @@ const NavBar = ({ user, isLoading }) => {
                 sx={{
                   flexGrow: 2,
                   display: { sm: 'block' },
-                  fontFamily: 'Righteous',
+                  fontFamily: 'Roboto',
+                  fontWeight: 'bold',
                 }}
               >
                 Kniha Memů

@@ -166,7 +166,8 @@ const EditMeme = () => {
         variant="h2"
         color="initial"
         textAlign={'center'}
-        fontFamily="Righteous"
+        fontFamily="Roboto"
+        fontWeight="bold"
         sx={{ fontSize: '3rem' }}
         mb={2}
       >
@@ -231,7 +232,7 @@ const EditMeme = () => {
                 </Stack>
               </Stack>
               <Typography
-                sx={{ fontWeight: 'medium', fontFamily: 'Righteous' }}
+                sx={{ fontWeight: 'medium', fontFamily: 'Roboto' }}
                 component="div"
                 variant="h5"
               >

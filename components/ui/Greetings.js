@@ -27,7 +27,8 @@ const Greetings = () => {
             variant="h1"
             color="initial"
             fontSize={52}
-            fontFamily={'Righteous'}
+            fontFamily={'Roboto'}
+            fontWeight={700}
           >
             Vítej v knize memásků
           </Typography>

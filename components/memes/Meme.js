@@ -175,7 +175,7 @@ export default function Meme({
               </Stack>
             </Stack>
             <Typography
-              sx={{ fontWeight: 'medium', fontFamily: 'Righteous' }}
+              sx={{ fontWeight: 'medium', fontFamily: 'Roboto' }}
               component="div"
               variant="h5"
             >
