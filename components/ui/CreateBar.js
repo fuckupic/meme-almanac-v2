@@ -10,7 +10,6 @@ import TextField from '@mui/material/TextField'
 import { Autocomplete } from '@mui/material'
 
 const CreateBar = ({ date, names, filterMemes }) => {
-  console.log(height)
   const router = useRouter()
 
   const yearRef = React.useRef()
