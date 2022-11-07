@@ -8,8 +8,11 @@ import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRou
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import TextField from '@mui/material/TextField'
 import { Autocomplete } from '@mui/material'
+import useWindowSize from '../functions/useWindowSize'
 
 const CreateBar = ({ date, names, filterMemes }) => {
+  const { height, width } = useWindowSize()
+  console.log(height)
   const router = useRouter()
 
   const yearRef = React.useRef()
@@ -37,8 +40,21 @@ const CreateBar = ({ date, names, filterMemes }) => {
     router.push('new-meme')
   }
   return (
-    <div>
-      <form onSubmit={filterMemes}>
+    <Box
+      sx={{
+        padding: 'none',
+        margin: 'none',
+        maxWidth: '100%',
+      }}
+    >
+      <form
+        onSubmit={filterMemes}
+        sx={{
+          padding: 'none',
+          margin: 'none',
+          maxWidth: '80%',
+        }}
+      >
         <Grid
           container
           rowSpacing={{ xs: 4, sm: 4, md: 2 }}
@@ -47,8 +63,10 @@ const CreateBar = ({ date, names, filterMemes }) => {
           justifyContent={'center'}
           alignItems={'center'}
           sx={{
-            px: 2,
-            py: 4,
+            padding: 'none',
+            margin: 'none',
+            maxWidth: '100%',
+            pb: 4,
           }}
         >
           <Grid item xs={10} sm={8} md={8}>
@@ -95,7 +113,7 @@ const CreateBar = ({ date, names, filterMemes }) => {
                   border: '2px solid #000',
                 }}
               >
-                Filtrovat
+                {height > 600 && 'Filtrovat'}
               </Button>
             </Stack>
           </Grid>
@@ -116,7 +134,7 @@ const CreateBar = ({ date, names, filterMemes }) => {
           {/* </a> */}
         </Grid>
       </form>
-    </div>
+    </Box>
   )
 }
 
