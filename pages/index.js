@@ -41,4 +41,4 @@ function HomePage() {
 
 export default HomePage
 
-// export const getServerSideProps = withPageAuthRequired()
+export const getServerSideProps = withPageAuthRequired()
