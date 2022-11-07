@@ -6,6 +6,11 @@ import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import InputBase from '@mui/material/InputBase'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Button from '@mui/material/Button'
+import { Stack } from '@mui/material'
+import LogButton from './LogButton'
 // import SearchIcon from '@mui/icons-material/Search'
 
 const Search = styled('div')(({ theme }) => ({
@@ -50,7 +55,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-const NavBar = () => {
+const NavBar = ({ user, isLoading }) => {
+  const router = useRouter()
+
   return (
     <Box
       sx={{ flexGrow: 1, backgroundColor: 'red', zIndex: 100 }}
@@ -58,24 +65,24 @@ const NavBar = () => {
     >
       <AppBar position="static">
         <Toolbar sx={{ flexGrow: 1, backgroundColor: 'black' }}>
-          <Typography
-            variant="h4"
-            noWrap
-            component="div"
-            sx={{
-              flexGrow: 2,
-              display: { sm: 'block' },
-              fontFamily: 'Righteous',
-            }}
-          >
-            Kniha Memů
-          </Typography>
-          <Search>
-            <StyledInputBase
-              placeholder="Vyhledat..."
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+          <Stack direction={'row'} width="100%" justifyContent="space-between">
+            <Link href="/" passHref>
+              <Typography
+                variant="h4"
+                noWrap
+                component="div"
+                color={'white'}
+                sx={{
+                  flexGrow: 2,
+                  display: { sm: 'block' },
+                  fontFamily: 'Righteous',
+                }}
+              >
+                Kniha Memů
+              </Typography>
+            </Link>
+            <LogButton user={user} isLoading={isLoading} />
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>

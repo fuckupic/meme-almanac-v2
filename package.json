@@ -8,8 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
@@ -29,7 +27,6 @@
     "moment": "^2.29.4",
     "mui-image": "^1.0.7",
     "mysql2": "^2.3.3",
-    "gh-pages": "^4.0.0",
     "next": "13.0.0",
     "next-password-protect": "^1.8.0",
     "prisma": "^4.5.0",

@@ -4,6 +4,8 @@ import ParticlesStuff from '../components/ui/Particles'
 import Layout from '../components/layout/Layout'
 import { Box, createTheme, ThemeProvider } from '@mui/material'
 import { withPasswordProtect } from 'next-password-protect'
+import { UserProvider } from '@auth0/nextjs-auth0'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const THEME = createTheme({
   typography: {
@@ -32,11 +34,15 @@ const THEME = createTheme({
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={THEME}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <ParticlesStuff />
-    </ThemeProvider>
+    <UserProvider>
+      <ThemeProvider theme={THEME}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <ParticlesStuff />
+      </ThemeProvider>
+    </UserProvider>
   )
 }
+
+export const getServerSideProps = withPageAuthRequired()

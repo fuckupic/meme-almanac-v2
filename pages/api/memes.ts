@@ -15,7 +15,7 @@ export default async function handler(
           name: enteredName,
           description: enteredDescription,
           date: enteredDate,
-          image: enteredImage,
+          image: enteredImage != null ? enteredImage : undefined,
         },
       })
       console.log('Added category data')
@@ -47,5 +47,37 @@ export default async function handler(
 
       res.status(200).json(memes)
     }
+  }
+  if (req.method === 'PUT') {
+    const numId = parseInt(req.query.id)
+
+    const { enteredName, enteredDescription, enteredDate, enteredImage } =
+      req.body
+
+    const meme = await prisma.memes.update({
+      where: {
+        id: numId,
+      },
+      data: {
+        name: enteredName != null ? enteredName : undefined,
+        description:
+          enteredDescription != null ? enteredDescription : undefined,
+        image: enteredImage != null ? enteredImage : undefined,
+        date: enteredDate != null ? enteredDate : undefined,
+      },
+    })
+
+    res.status(201).json({ message: 'Updated' })
+  }
+  if (req.method === 'DELETE') {
+    const numId = parseInt(req.query.id)
+
+    const memes = await prisma.memes.delete({
+      where: {
+        id: numId,
+      },
+    })
+
+    res.status(200).json(memes)
   }
 }

@@ -53,7 +53,11 @@ const CreateBar = ({ date, names, filterMemes }) => {
             id="free-solo-2-demo"
             disableClearable
             options={names}
-            sx={{ width: 300 }}
+            sx={{
+              width: 300,
+              backdropFilter: 'blur(12px)',
+              borderRadius: '20px',
+            }}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -70,7 +74,11 @@ const CreateBar = ({ date, names, filterMemes }) => {
             disablePortal
             id="combo-box-demo"
             options={date}
-            sx={{ width: 100 }}
+            sx={{
+              width: 100,
+              backdropFilter: 'blur(12px)',
+              borderRadius: '20px',
+            }}
             renderInput={(params) => (
               <TextField {...params} value={yearRef} label="Rok" />
             )}
@@ -81,6 +89,9 @@ const CreateBar = ({ date, names, filterMemes }) => {
             type="submit"
             onClick={handleFilter}
             startIcon={<FilterAltIcon />}
+            sx={{
+              border: '2px solid #000',
+            }}
           >
             Filtrovat
           </Button>
@@ -90,6 +101,9 @@ const CreateBar = ({ date, names, filterMemes }) => {
             color="secondary"
             startIcon={<AddCircleOutlineRoundedIcon />}
             onClick={handleClick}
+            sx={{
+              border: '2px solid #000',
+            }}
           >
             Přidat Memák
           </Button>

@@ -53,7 +53,7 @@ const ParticlesStuff = () => {
             bubble: {
               distance: 100,
               duration: 2,
-              opacity: 0.6,
+              opacity: 0.2,
               size: 60,
               speed: 10,
             },
@@ -67,7 +67,7 @@ const ParticlesStuff = () => {
             grab: {
               distance: 400,
               lineLinked: {
-                opacity: 0.5,
+                opacity: 0.1,
               },
             },
             push: {
@@ -92,7 +92,7 @@ const ParticlesStuff = () => {
             consent: false,
             distance: 150,
             enable: false,
-            opacity: 1,
+            opacity: 0.1,
             width: 1,
           },
           move: {
@@ -122,11 +122,11 @@ const ParticlesStuff = () => {
           opacity: {
             animation: {
               enable: true,
-              speed: 1,
-              sync: false,
+              speed: 0.01,
+              sync: true,
             },
             random: true,
-            value: 1,
+            value: 0.2,
           },
           rotate: {
             animation: {
@@ -140,91 +140,91 @@ const ParticlesStuff = () => {
           },
           shape: {
             character: {
-              fill: false,
+              fill: true,
               font: 'Verdana',
               style: '',
-              value: '*',
+              value: 'ASfsfksn',
               weight: '400',
             },
             image: [
               {
-                src: 'images/banana.png',
+                src: '/images/banana.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/beer.png',
+                src: '/images/beer.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/cards.png',
+                src: '/images/cards.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/chicken.png',
+                src: '/images/chicken.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/dobby.png',
+                src: '/images/dobby.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/frog.png',
+                src: '/images/frog.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/hand1.png',
+                src: '/images/hand1.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/hand2.png',
+                src: '/images/hand2.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/hand3.png',
+                src: '/images/hand3.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/hand4.png',
+                src: '/images/hand4.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/houba.png',
+                src: '/images/houba.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/housenka.png',
+                src: '/images/housenka.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/lungs.png',
+                src: '/images/lungs.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/muchomurka.png',
+                src: '/images/muchomurka.png',
                 width: 64,
                 height: 64,
               },
               {
-                src: 'images/potlouk.png',
+                src: '/images/potlouk.png',
                 width: 64,
                 height: 64,
               },
             ],
             polygon: {
-              sides: 5,
+              sides: 20,
             },
             stroke: {
               color: '#000000',
@@ -235,12 +235,12 @@ const ParticlesStuff = () => {
           size: {
             animation: {
               enable: false,
-              minimumValue: 0.1,
-              speed: 40,
+              minimumValue: 0.02,
+              speed: 20,
               sync: true,
             },
-            random: true,
-            value: 25,
+            random: false,
+            value: 40,
           },
         },
         polygon: {

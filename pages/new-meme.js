@@ -15,6 +15,8 @@ import moment from 'moment/moment'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import randomMemeName from '../components/functions/randomMemeName'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import Image from 'next/image'
 
 const newMeme = () => {
   const dateOptions = ['2016', '2017', '2018', '2019', '2020', '2021', '2022']
@@ -63,7 +65,7 @@ const newMeme = () => {
 
       enteredImage = imagedata.secure_url
     } else {
-      enteredImage = 'none'
+      enteredImage = 'null'
     }
 
     const data = await fetch('/api/memes', {
@@ -99,33 +101,63 @@ const newMeme = () => {
   }
 
   return (
-    <Box maxWidth={'40rem'} position={'relative'} sx={{ zIndex: 100 }}>
+    <Box
+      maxWidth={'40rem'}
+      position={'relative'}
+      sx={{
+        zIndex: 100,
+        px: 2,
+        py: 4,
+        backdropFilter: 'blur(2.5px)',
+        borderRadius: '20px',
+        border: '2px solid rgba(0, 0, 0, 1)',
+        backgroundColor: 'rgba(255,253,255, 0.5)',
+        boxShadow: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        margin: 'auto',
+      }}
+    >
       <Stack alignContent={'center'} margin={'auto'}>
         <Stack
           spacing={5}
           fontFamily={'Dosis'}
           display={'flex'}
-          alignItems={'start'}
+          alignItems={'center'}
         >
           <Stack textAlign={'left'} spacing={1}>
-            <Typography variant="h1" color="initial" fontFamily={'Righteous'}>
+            <Typography
+              variant="h1"
+              color="initial"
+              fontFamily={'Righteous'}
+              textAlign="center"
+            >
               Přidat Memzu
             </Typography>
-            <Typography variant="body1" color="initial">
-              Vyplň údaje o memrákovi, které si pamatuješ. Popis obrázku zadej v
-              angličtině.
+            <Typography variant="body1" color="initial" textAlign="center">
+              Vyplň údaje o memrákovi, které si pamatuješ.
             </Typography>
           </Stack>
           <form onSubmit={submitHandler} ref={formRef}>
             <Stack spacing={2}>
-              <TextField label="Název" inputRef={nameInputRef} />
-              <TextField label="Popis" inputRef={descriptionInputRef} />
-              <Typography variant="body1" color="initial">
-                Vobrázek
-              </Typography>
-              <input type="file" name="file" onChange={handleOnChange} />
-
-              <img src={imageSrc} />
+              <TextField
+                sx={{
+                  backdropFilter: 'blur(50px)',
+                  backgroundColor: 'rgba(255,253,1, 0.5)',
+                }}
+                label="Název"
+                inputRef={nameInputRef}
+              />
+              <TextField
+                sx={{
+                  backdropFilter: 'blur(50px)',
+                  backgroundColor: 'rgba(255,253,1, 0.5)',
+                }}
+                label="Popis"
+                inputRef={descriptionInputRef}
+              />
 
               {/* {uploadData && (
             <code>
@@ -138,6 +170,10 @@ const newMeme = () => {
                 options={dateOptions}
                 renderInput={(params) => (
                   <TextField
+                    sx={{
+                      backdropFilter: 'blur(50px)',
+                      backgroundColor: 'rgba(255,253,1, 0.5)',
+                    }}
                     {...params}
                     value={yearInputRef}
                     inputRef={yearInputRef}
@@ -145,7 +181,13 @@ const newMeme = () => {
                   />
                 )}
               />
-              <Button variant="contained" color="success" type="submit">
+              <Typography variant="body1" color="initial">
+                Vobrázek
+              </Typography>
+              <input type="file" name="file" onChange={handleOnChange} />
+
+              <Image src={imageSrc} />
+              <Button variant="contained" color="primary" type="submit">
                 Přidat memzáka
               </Button>
               <ToastContainer />
@@ -158,3 +200,4 @@ const newMeme = () => {
 }
 
 export default newMeme
+export const getServerSideProps = withPageAuthRequired()

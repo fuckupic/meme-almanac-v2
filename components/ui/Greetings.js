@@ -14,8 +14,9 @@ const Greetings = () => {
           sx={{
             px: 2,
             py: 4,
-            bgColor: 'rgba(255, 255, 255, 0.01)',
-            backdropFilter: 'blur(5px)',
+            backdropFilter: 'blur(12px)',
+            borderRadius: '20px',
+            border: '2px solid rgba(0, 0, 0, 1)',
             boxShadow: 3,
           }}
         >

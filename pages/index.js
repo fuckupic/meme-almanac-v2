@@ -8,6 +8,8 @@ import Greetings from '../components/ui/Greetings'
 import Button from '@mui/material/Button'
 import { Box, Stack } from '@mui/material'
 import MemeList from '../components/memes/MemeList'
+import { useUser } from '@auth0/nextjs-auth0'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 function HomePage() {
   const fetcher = (url) => fetch(url).then((r) => r.json())
@@ -38,3 +40,5 @@ function HomePage() {
 }
 
 export default HomePage
+
+export const getServerSideProps = withPageAuthRequired()

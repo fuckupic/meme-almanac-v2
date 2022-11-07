@@ -18,7 +18,6 @@ function MemeList({ memes }) {
         .map((meme) => (
           <Grid item xs={10} sm={5} md={4}>
             <Meme
-              key={meme.id}
               id={meme.id}
               name={meme.name}
               description={meme.description}
