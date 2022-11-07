@@ -8,10 +8,8 @@ import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRou
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import TextField from '@mui/material/TextField'
 import { Autocomplete } from '@mui/material'
-import useWindowSize from '../functions/useWindowSize'
 
 const CreateBar = ({ date, names, filterMemes }) => {
-  const { height, width } = useWindowSize()
   console.log(height)
   const router = useRouter()
 
@@ -113,7 +111,7 @@ const CreateBar = ({ date, names, filterMemes }) => {
                   border: '2px solid #000',
                 }}
               >
-                {height > 600 && 'Filtrovat'}
+                Filtrovat
               </Button>
             </Stack>
           </Grid>
