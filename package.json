@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "npm install && npm run build"
+    "build": "npm run build"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.2",
