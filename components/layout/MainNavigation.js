@@ -81,7 +81,7 @@ const NavBar = ({ user, isLoading }) => {
                 Kniha Memů
               </Typography>
             </Link>
-            {/* <LogButton user={user} isLoading={isLoading} /> */}
+            <LogButton user={user} isLoading={isLoading} />
           </Stack>
         </Toolbar>
       </AppBar>

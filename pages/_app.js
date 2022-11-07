@@ -45,4 +45,4 @@ export default function MyApp({ Component, pageProps }) {
   )
 }
 
-// export const getServerSideProps = withPageAuthRequired()
+export const getServerSideProps = withPageAuthRequired()
