@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   if (req.method === 'GET') {
-    const numId = parseInt(req.query.id)
+    const numId = req.query.id
 
     const memes = await prisma.memes.findUnique({
       where: {

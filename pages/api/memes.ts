@@ -49,7 +49,7 @@ export default async function handler(
     }
   }
   if (req.method === 'PUT') {
-    const numId = parseInt(req.query.id)
+    const numId = req.query.id
 
     const { enteredName, enteredDescription, enteredDate, enteredImage } =
       req.body
@@ -70,7 +70,7 @@ export default async function handler(
     res.status(201).json({ message: 'Updated' })
   }
   if (req.method === 'DELETE') {
-    const numId = parseInt(req.query.id)
+    const numId = req.query.id
 
     const memes = await prisma.memes.delete({
       where: {

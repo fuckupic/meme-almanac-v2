@@ -63,8 +63,10 @@ export default function Meme({
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
+  const numId = parseInt(id)
+
   const handleDelete = async () => {
-    const data = await fetch(`/api/memes?id=${id}`, {
+    const data = await fetch(`/api/memes?id=${numId}`, {
       method: 'DELETE',
     })
     router.reload(window.location.pathname)
@@ -83,6 +85,7 @@ export default function Meme({
         padding: 2,
       }}
     >
+      <ToastContainer />
       <Modal
         open={open}
         onClose={handleClose}
@@ -214,6 +217,7 @@ export default function Meme({
         </Box>
         <Box mt={2}>
           <Image
+            alt=""
             src={image}
             fit="contain"
             showLoading={true}

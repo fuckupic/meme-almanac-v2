@@ -16,7 +16,7 @@ function MemeList({ memes }) {
         ?.slice(0)
         .reverse()
         .map((meme) => (
-          <Grid item xs={10} sm={5} md={4}>
+          <Grid item xs={10} sm={5} md={4} key={meme.id}>
             <Meme
               id={meme.id}
               name={meme.name}

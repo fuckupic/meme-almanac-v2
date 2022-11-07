@@ -11,7 +11,6 @@ import { Autocomplete } from '@mui/material'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Modal from '@mui/material'
-import 'react-toastify/dist/ReactToastify.css'
 
 import { useTheme } from '@mui/material/styles'
 import EditIcon from '@mui/icons-material/Edit'
@@ -23,13 +22,14 @@ import { useRouter } from 'next/router'
 import Meme from '../../components/memes/Meme'
 import { useEffect } from 'react'
 
-const editMeme = () => {
+const EditMeme = () => {
   const dateOptions = ['2016', '2017', '2018', '2019', '2020', '2021', '2022']
   const router = useRouter()
   const id = router.query.meme
+  const numId = parseInt(id)
 
   const fetcher = (url) => fetch(url).then((r) => r.json())
-  const { data, error } = useSwr(`/api/meme/${id}`, fetcher)
+  const { data, error } = useSwr(`/api/meme/${numId}`, fetcher)
 
   const moment = require('moment')
 
@@ -120,7 +120,9 @@ const editMeme = () => {
       enteredImage = null
     }
 
-    const data = await fetch(`/api/memes?id=${id}`, {
+    const numId = parseInt(id)
+
+    const data = await fetch(`/api/memes?id=${numId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -247,6 +249,7 @@ const editMeme = () => {
               <Image
                 src={image}
                 fit="contain"
+                alt=""
                 showLoading={true}
                 sx={{
                   borderRadius: '10px',
@@ -258,6 +261,7 @@ const editMeme = () => {
               <Image
                 src={imageSrc}
                 fit="contain"
+                alt=""
                 showLoading={true}
                 sx={{
                   borderRadius: '10px',
@@ -330,4 +334,4 @@ const editMeme = () => {
   )
 }
 
-export default editMeme
+export default EditMeme

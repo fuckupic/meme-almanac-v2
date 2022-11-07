@@ -18,7 +18,7 @@ import randomMemeName from '../components/functions/randomMemeName'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import Image from 'next/image'
 
-const newMeme = () => {
+const NewMeme = () => {
   const dateOptions = ['2016', '2017', '2018', '2019', '2020', '2021', '2022']
   const nameInputRef = useRef()
   const descriptionInputRef = useRef()
@@ -186,7 +186,7 @@ const newMeme = () => {
               </Typography>
               <input type="file" name="file" onChange={handleOnChange} />
 
-              <Image src={imageSrc} />
+              <Image src={imageSrc} alt="uploaded Image" />
               <Button variant="contained" color="primary" type="submit">
                 Přidat memzáka
               </Button>
@@ -199,5 +199,5 @@ const newMeme = () => {
   )
 }
 
-export default newMeme
+export default NewMeme
 export const getServerSideProps = withPageAuthRequired()
