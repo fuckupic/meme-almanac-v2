@@ -50,13 +50,14 @@ export default async function handler(
   }
   if (req.method === 'PUT') {
     const numId = req.query.id
+    const newId = Number(numId)
 
     const { enteredName, enteredDescription, enteredDate, enteredImage } =
       req.body
 
     const meme = await prisma.memes.update({
       where: {
-        id: numId,
+        id: newId,
       },
       data: {
         name: enteredName != null ? enteredName : undefined,
@@ -71,10 +72,11 @@ export default async function handler(
   }
   if (req.method === 'DELETE') {
     const numId = req.query.id
+    const newId = Number(numId)
 
     const memes = await prisma.memes.delete({
       where: {
-        id: numId,
+        id: newId,
       },
     })
 

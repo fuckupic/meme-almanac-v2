@@ -5,15 +5,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  if (req.method === 'GET') {
-    const numId = req.query.id
+  const numId = req.query.id
+  const newId = Number(numId)
 
-    const memes = await prisma.memes.findUnique({
-      where: {
-        id: numId,
-      },
-    })
+  const memes = await prisma.memes.findUnique({
+    where: {
+      id: newId,
+    },
+  })
 
-    res.status(200).json(memes)
-  }
+  res.status(200).json(memes)
 }
