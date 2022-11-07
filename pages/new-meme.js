@@ -200,4 +200,4 @@ const NewMeme = () => {
 }
 
 export default NewMeme
-export const getServerSideProps = withPageAuthRequired()
+// export const getServerSideProps = withPageAuthRequired()
